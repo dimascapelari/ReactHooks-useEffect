@@ -57,7 +57,21 @@ function App() {
       {user && (
         <div>
           <p>Dados do usuário:</p>
-          <h2>Nome: {user.name}</h2>
+          <h2>{user.name}</h2>
+          <p>{user.bio}</p>
+          <p>Seguidores: {user.followers}</p>
+          <p>Repositórios Publicos: {user.public_repos}</p>
+          <p>Cidade: {user.location}</p>
+          {/* <p>Criado em {user.created_at}</p> */}
+          <p>
+            Criado em {new Date(user.created_at).toLocaleDateString()} às{" "}
+            {new Date(user.created_at).toLocaleTimeString()}
+          </p>
+          {/* <p>Atualizado em {user.updated_at}</p> */}
+          <p>
+            Atualizado em {new Date(user.updated_at).toLocaleDateString()} às{" "}
+            {new Date(user.updated_at).toLocaleTimeString()}
+          </p>
           <p>
             Site: <a href={user.blog}>{user.blog}</a>
           </p>
